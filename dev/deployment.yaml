@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-demo-app
+  labels:
+    app: jenkins-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-demo-app
+  template:
+    metadata:
+      labels:
+        app: jenkins-demo-app
+    spec:
+      containers:
+        - name: jenkins-demo-app
+          image: nagendrappa1/jenkins_demo_app:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
