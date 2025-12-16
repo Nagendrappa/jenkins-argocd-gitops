@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: jenkins-demo-app
-          image: nagendrappa1/jenkins_demo_app:latest
+          image: nagendrappa1/jenkins_demo_app:main
           ports:
             - containerPort: 8080
           resources:
