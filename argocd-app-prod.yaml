@@ -10,6 +10,9 @@ spec:
     targetRevision: HEAD
     path: prod
   destination:
-    server: https://kubernetes.default.svc
+    server: https://50A96D9304A3080A17C32DAAD802E1D9.gr7.us-east-1.eks.amazonaws.com
     namespace: prod
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
